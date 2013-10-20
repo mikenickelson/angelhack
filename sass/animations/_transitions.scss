@@ -1,0 +1,13 @@
+@import "compass/css3/transition";
+
+/* use @extend with these please */
+
+.transition-default {
+	@include single-transition(all, .15s, ease-in-out);
+	-webkit-perspective: 1000;
+	-webkit-backface-visibility: hidden;
+}
+
+.transition-background {
+    @include single-transition(background, 1s, ease-in-out);
+}

@@ -1,0 +1,86 @@
+//TODO: locate default browser fonts for devices;
+$sans-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$icon-font-family: "ChaseIconsNeue";
+
+//* Colors ******************/
+$primary: #0079c1;  //chase blue brand
+$primary-light: #58afd7;  // light blue -inner shadow
+$primary-medium: #026eae;  // medium blue - border
+$black: #000;
+$white: #fff;
+$half-white: rgba(255,255,255,.5); 
+$dark-gray: #101113;
+$light-gray: #d9d9d9; //light gray is darker than disabled gray
+$light-gray-border: #dadcdb;
+$disabled-gray: #bdc0c9;
+$background-gray: #ebebed;
+
+$primary-gradient-start: #5facd7; //beginning of blue gradient
+$primary-gradient-end: #017dc2; // end of blue gradient
+$light-gradient-start: #f4f4f5; //beginning of gray gradient
+$light-gradient-end: #f1f1f2; //end of gray gradient
+
+
+//* Text-Shadows ******************/
+$light-text-shadow: 0 1px 1px $white;
+$dark-text-shadow: 0 1px 1px $dark-gray;
+$dark-text-shadow-above: 0 1px 1px $dark-gray;
+
+.primary-gradient {
+    background: $primary;
+    @include background(linear-gradient(top,
+    $primary-gradient-start 0%,
+    $primary-gradient-end 100%));
+}
+
+.light-gray-gradient {
+    background: $primary;
+    @include background(linear-gradient(top,
+    $light-gradient-start 5%,
+    $light-gradient-end 25%,
+    $light-gradient-end 85%,
+    #ffffff 100%));
+}
+
+//*Background ******************/
+.striped {  
+    background-color: $background-gray;
+    @include background(linear-gradient(left,
+        rgba(187,187,187, 0) 0%,
+        rgba(235, 235, 237, .5) 15%,
+        rgb(235, 235, 237) 40%,
+        rgb(235, 235, 237) 50%,
+        rgb(235, 235, 237) 60%,
+        rgba(235, 235, 237, .5) 85%,
+        rgba(187,187,187, 0) 100%), url(images/striped-default.png));
+    background-repeat: repeat;
+    background-size: cover, 4px 4px;
+}
+
+.dark-striped {  
+    background-color: #656a77;
+    @include background(linear-gradient(left,
+        rgba(101, 106, 119, 0) 0%,
+        rgba(101, 106, 119, .5) 15%,
+        rgb(101, 106, 119) 40%,
+        rgb(101, 106, 119) 50%,
+        rgb(101, 106, 119) 60%,
+        rgba(101, 106, 119, .5) 85%,
+        rgba(101, 106, 119, 0) 100%), url(images/striped-dark.png));
+    background-repeat: repeat;
+    background-size: cover, 4px 4px;
+    height: auto;
+    li, span {
+        color: white;
+        text-shadow: $dark-text-shadow;
+    }
+}
+
+//************* Box Shadows ******************/
+.box-shadow-normal { @include single-box-shadow(rgba(0, 0, 0, .2), 0, 2px, 5px, 5px)}
+.list-box-shadow { @include single-box-shadow(#333, 0px, 0px, 2px)}
+.light-box-shadow { @include box-shadow(0 2px 8px rgba(187, 187, 187, .75), 1px 2px 1px rgba(0, 0, 0, 0.25) inset);}
+.light-box-shadow-inset { @include box-shadow(0 2px 8px rgba(187, 187, 187, .75), 0px 2px 10px rgba(0, 0, 0, 0.25) inset);}
+.dark-box-shadow { @include box-shadow(0 5px 10px rgba(0, 0, 0, .5), 0 2px 0 rgba(0, 0, 0, 0.25) inset);}
+.footer-box-shadow { @include single-box-shadow(rgba(0, 0, 0, .2), 0, -2px, 15px, 1px)}
+

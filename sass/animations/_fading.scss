@@ -1,0 +1,8 @@
+@import "compass/css3/transition";
+
+.fade-in, .fade-out { @extend .transition-default; }
+
+.default-fade-in, .hide, .fade-out { opacity: 0; }
+.default-fade-out, .show, .fade-in { opacity: 1; }
+
+.no-bg { background: none !important; }

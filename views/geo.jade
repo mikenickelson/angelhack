@@ -1,0 +1,14 @@
+extends layout
+
+block content
+		h1 Search for #{tag}
+
+		each user, key in users
+			a(href="http://instagram.com/#{user.username}")
+				h3= user.username
+
+				each pic in user.pics
+					a(href="#{pic}")
+						img(src="#{pic}", width=200)
+
+					

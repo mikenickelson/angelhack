@@ -1,0 +1,30 @@
+extends layout
+
+block content   
+
+    div.swipe#mySwipe
+        div.swipe-wrap
+
+            each user, key in users
+                div.user
+
+                    div.mask
+                        img(src="/images/profile/mask.png")
+
+                    img.profile-pic(src="#{user.profile_picture}")
+
+                    div.meta
+                        h3= user.username
+                        h4= user.matchedTags
+
+                    img.thumb.first(src="#{user.images[0]}")
+
+                    - for (var i = 1; i < user.images.length; ++i) {
+                        img.thumb(src="#{user.images[i]}")
+                    - }
+
+                    img.follow(src="/images/profile/follow.jpg")
+
+
+    script.
+        window.mySwipe = Swipe(document.getElementById('mySwipe'), {disableScroll:true});

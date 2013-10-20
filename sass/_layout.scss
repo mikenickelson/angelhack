@@ -1,0 +1,114 @@
+@import 'compass/css3';
+
+//* Mini-Reset ******************/
+body {
+	font-size: 16px;
+	font-family: "Helvetica Neue", Helvetica, Arial, Robota, sans-serif;
+	background-color: #fff;
+	color: #222;
+	text-shadow: 1px 1px 1px #fff;
+	font-weight: 200;
+}
+
+html, body, ul, li, div, section, a {
+	@extend .border-box;
+	@extend .zero-margin-zero-padding;
+}
+
+a, a:hover {
+	cursor: pointer;
+}
+
+input {
+	border: none;
+	font-size: 16px;
+	font-weight: 200;
+	background-color: transparent;
+	text-shadow: 1px 1px 1px #fff;
+	padding: 8px;
+}
+
+//* Helpers ******************/
+.zero-margin-zero-padding {
+	margin: 0;
+	padding: 0;
+}
+
+.center-fix {
+	display: block;
+	margin: 0 auto;
+}
+
+.border-radius-five {
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+//border-box FTW!
+.border-box {
+	@include box-sizing(border-box);
+}
+
+// Button rule ( 100% not larger than 300px )
+.center-rule {
+	width: 100%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 300px;
+}
+
+/* Layout ******************/
+
+.outer-container {
+	width: 320px;
+	padding: 7px;
+	@extend .center-fix;
+	@extend .border-box;
+	border: 1px solid #ccc;
+	background-color: #cdcdcd;
+}
+
+.inner-container {
+	position: relative;
+	height: 100%;
+	padding: 7px;
+	@extend .center-fix;
+	@extend .border-box;
+	@include border-radius(10px);
+	border: 1px solid #ccc;
+	background-color: #eeeeee;
+	text-align: center;
+}
+
+//Full Container = 100% for full width
+.full-container {
+	width: 100%;
+	padding: 0;
+	@extend .center-fix;
+}
+
+//fluid image
+.fluid-img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+// footer button icons
+.inner-footer span {
+	position: relative;
+	top: -0.1em;
+}
+
+.table {
+	display: table;
+}
+
+.row {
+	display: table-row;
+}
+
+.cell {
+	display: table-cell;
+}

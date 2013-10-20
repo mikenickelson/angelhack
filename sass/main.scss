@@ -1,0 +1,21 @@
+@import "layout";
+@import "typography";
+@import "theme_variables";
+
+//Global UI Components
+@import "buttons";
+@import "footer";
+@import "headers";
+@import "hrs";
+@import "icons";
+
+// These are components
+@import "app";
+ 
+// These are animations
+@import "animations/transitions";
+@import "animations/slide-down";
+@import "animations/slide-up";
+@import "animations/slide-right";
+@import "animations/slide-left";
+@import "animations/fading";

@@ -1,0 +1,103 @@
+//Form Elements
+@import 'compass/css3';
+
+//---------- Styled Input
+.styled-input {
+	width: 71%;
+	max-width: 300px;
+	font-size: $font-20px;
+	@include border-radius(2px);
+	display: block;
+	margin: .25em auto;
+	border: 2px solid $white;
+	@include box-shadow(0 1px 6px 2px rgba(204, 204, 204, .8) inset);
+	color: $dark-gray;
+	line-height: 1em;
+	padding: .5em;
+	outline: 0 none;
+}
+
+//-----  Styled Select Boxes
+div[data-role="styled-select"] {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    padding-top: 0;
+    padding-bottom: 0;
+    &:after {
+        font-family: $icon-font-family;
+        color: $dark-gray;
+        content: '\e001';
+        position: absolute;
+        top: 1em;
+        right: .5em;
+    }
+    label {
+        @extend .gray-button;
+        text-align: left;
+        padding: 1em .5em;
+    }
+    select[hidden] {
+        @include appearance(button);
+        @include opacity(0);
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+//-- Styled Checkbox
+div[data-role="styled-checkbox"] {
+    position: relative;
+    div{
+        @extend .styled-input;
+        background: white;
+        width: 2em;
+        height: 2em;
+        min-height: 2em;
+        padding: 0;
+    }
+    input[type="checkbox"] {
+        @include appearance(none);
+        @include box-shadow(none);
+        @include opacity(.5);
+        border: 0;
+        width: 2em;
+        height: 2em;
+        min-height: 2em;
+        padding: 0;
+        position: absolute;
+        z-index:1;
+        top: 0;
+        left: 0;
+        &:checked + div:after {
+            font-family: $icon-font-family;
+            content: '\e006';
+            color: $primary;
+            position: absolute;
+            top: .5em;
+            left: .5em;            
+        }
+    }
+}
+
+//-----  Input Label
+label {
+	display: block;
+	color: $dark-gray;
+	text-shadow: $light-text-shadow;
+	font-size: $font-14px;
+	text-align: center;
+	margin-bottom: .25em;
+}
+
+//-----  Input
+input[type="text"] {
+	@extend .styled-input;
+	display: block;
+	margin: 0 auto;
+}	

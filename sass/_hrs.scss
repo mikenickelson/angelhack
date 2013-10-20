@@ -1,0 +1,23 @@
+
+// hr that scales full width
+.full-hr {
+	width: 100%;
+	margin: 0;
+	display: block;
+	height: 1px;
+	border: 0 none;
+	background: $disabled-gray;
+	border-bottom: 1px solid $white;
+}
+
+.fading-hr {
+	display: block;
+	border: 0;
+	margin: 1em 0;
+	height: 1px;
+	background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(189, 192, 201, 0)), color-stop(20%, rgb(189, 192, 201)), color-stop(80%, rgb(189, 192, 201)), color-stop(100%, rgba(189, 192, 201, 0))), -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(10%, white), color-stop(90%, white), color-stop(100%, rgba(255, 255, 255, 0)));
+	background: -webkit-linear-gradient(left, rgba(189, 192, 201, 0) 0%, rgb(189, 192, 201) 20%, rgb(189, 192, 201) 80%, rgba(189, 192, 201, 0) 100%), -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, white 10%, white 90%, rgba(255, 255, 255, 0) 100%);
+	background: -moz-linear-gradient(left, rgba(189, 192, 201, 0) 0%, rgb(189, 192, 201) 20%, rgb(189, 192, 201) 80%, rgba(189, 192, 201, 0) 100%), -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, white 10%, white 90%, rgba(255, 255, 255, 0) 100%);
+	background: -o-linear-gradient(left, rgba(189, 192, 201, 0) 0%, rgb(189, 192, 201) 20%, rgb(189, 192, 201) 80%, rgba(189, 192, 201, 0) 100%), -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, white 10%, white 90%, rgba(255, 255, 255, 0) 100%);
+	background: linear-gradient(left, rgba(189, 192, 201, 0) 0%, rgb(189, 192, 201) 20%, rgb(189, 192, 201) 80%, rgba(189, 192, 201, 0) 100%), linear-gradient(left, rgba(255, 255, 255, 0) 0%, white 10%, white 90%, rgba(255, 255, 255, 0) 100%);	
+}

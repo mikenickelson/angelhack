@@ -1,0 +1,34 @@
+//* Buttons ******************/
+.button-base {
+	@include border-radius(10px); 
+	font-size: $font-20px;
+	padding: 0.5em 1em;
+	text-align: center;
+}
+
+//style width on individual pages if 100% rule doesn't apply
+.blue-button {
+	@extend .button-base;
+	@extend .primary-gradient;
+	text-shadow: $dark-text-shadow;
+	color: $white;
+	border: 1px solid $primary-medium;
+	@include box-shadow(0 1px 0 rgba(255,255,255,.5) inset);
+}
+
+.gray-button {
+	@extend .button-base;
+	width: 100%;
+    @include background(linear-gradient(top,
+	    #8a8a8a 0%,
+	    #4e4e4f 100%));
+	display: inline-block;
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.42);
+	@include box-shadow(inset 0px 1px 3px rgba(0,0,0,0.5));
+	color: #fff;
+	border: 1px solid $light-gray;
+}
+
+.disabled {
+	opacity: 0.2;
+}

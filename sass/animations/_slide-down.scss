@@ -1,0 +1,14 @@
+@import "compass/css3/transform";
+@import "animations/transitions";
+
+.default-down {
+  @include transform(translate3d(0,460px,0));
+  @extend .transition-default;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.down {
+  @include transform(translate3d(0,0,0));
+}

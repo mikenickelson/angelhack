@@ -1,0 +1,102 @@
+@import "compass/css3"; 
+
+//*************************************************//
+//******************** Base Class *****************//
+//************************************************//
+
+%base-header-class {
+    display: block;
+    width: 100%;
+    height: 3.7em;
+    z-index: 99;
+    section {
+        position: relative;
+        z-index: 10;
+    }
+	.logo {
+		line-height: 3.7em;
+		padding-left: 2.5em;
+		i[data-icon="logo"] {
+			text-shadow: none;
+			color: #1179c9;
+			position: relative;
+			left: -2px;
+		}
+		span {
+			color: #817979;
+			font-size: 0.9em;
+			display: inline-block;
+			position: relative;
+			left: 10px;
+		}
+	}
+
+}
+
+//*************************************************//
+//*************** Use these Classes ***************//
+//************************************************//
+
+// Blue Header with Light Shadow
+.primary-header-light-shadow {
+    @extend %base-header-class;
+    border-bottom: 1px solid $primary-medium;
+    @extend .primary-gradient;
+    @extend .light-box-shadow;
+    h1, h2, h3, i, a, a:active, a:visited {
+        color: $white !important;
+        text-shadow: $dark-text-shadow-above;
+    }
+    .home-button {
+        border-right: 1px solid $primary-light;
+        &:before {
+            border-right: 1px solid $primary-medium;
+        }
+    }
+    .end-button {
+        border-left: 1px solid $primary-medium;
+        &:before {
+            border-left: 1px solid $primary-light;
+        }
+    }
+}
+
+// Blue Header with Dark Shadow
+.primary-header-dark-shadow {
+    @extend .primary-header-light-shadow;
+    @extend .dark-box-shadow;
+    border-bottom: 1px solid $primary-medium;
+}
+
+// Light Gray Header with Light Shadow
+.light-header-light-shadow {
+    @extend %base-header-class;
+    @extend .light-gray-gradient;
+    @extend .light-box-shadow;
+    position: fixed;
+    @include box-shadow(0 2px 8px rgba(0,0,0,0.4));
+    .table {
+    	width: 100%;
+    }
+    .cell {
+    	white-space: nowrap;
+    	a {
+    		margin: 0 0.25em;
+    	}
+    }
+    .cell:nth-of-type(2) {
+    	text-align: right;
+    	padding-right: 0.5em;
+    }
+    h1, h2, h3, i, a, a:active, a:visited {
+        color: $dark-gray;
+        text-shadow: $light-text-shadow;
+    }
+}
+
+// Light Gray Header with Dark Shadow
+.light-header-dark-shadow {
+    @extend .light-header-light-shadow;
+    @extend .dark-box-shadow;
+    border-bottom: 1px solid $disabled-gray;
+}
